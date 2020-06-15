@@ -27,9 +27,10 @@
 #define _USE_MATH_DEFINES
 #include <vector>
 #include <cmath>
+#include <stddef.h>
 
 /** template class for calculating onset detection functions
- * Instantiations of the class should be of either 'float' or 
+ * Instantiations of the class should be of either 'float' or
  * 'double' types and no others */
 template <class T>
 class OnsetDetectionFunction
@@ -62,7 +63,7 @@ public:
     T spectralDifference (const std::vector<T>& magnitudeSpectrum);
 
     //===========================================================
-    /** calculates the half wave rectified spectral difference between the 
+    /** calculates the half wave rectified spectral difference between the
      * current magnitude spectrum and the previous magnitude spectrum
      * @param magnitudeSpectrum a vector containing the magnitude spectrum
      * @returns the HWR spectral difference onset detection function sample
@@ -70,7 +71,7 @@ public:
     T spectralDifferenceHWR (const std::vector<T>& magnitudeSpectrum);
 
     //===========================================================
-    /** calculates the complex spectral difference from the real and imaginary parts 
+    /** calculates the complex spectral difference from the real and imaginary parts
      * of the FFT
      * @param fftReal a vector containing the real part of the FFT
      * @param fftImag a vector containing the imaginary part of the FFT

@@ -27,6 +27,7 @@
 #include <vector>
 #include <numeric>
 #include <math.h>
+#include <stddef.h>
 
 /** template class for calculating common frequency domain
  * audio features. Instantiations of the class should be
@@ -41,7 +42,7 @@ public:
     //===========================================================
     /** calculates the spectral centroid given the first half of the magnitude spectrum
      of an audio signal. Do not pass the whole (i.e. mirrored) magnitude spectrum into
-     this function or you will always get the middle index as the spectral centroid 
+     this function or you will always get the middle index as the spectral centroid
      @param magnitudeSpectrum the first half of the magnitude spectrum (i.e. not mirrored)
      @returns the spectral centroid as an index value
      */
@@ -62,7 +63,7 @@ public:
      @returns the spectral crest
      */
     T spectralCrest (const std::vector<T>& magnitudeSpectrum);
-    
+
     //===========================================================
     /** calculates the spectral rolloff given the first half of the magnitude spectrum
      of an audio signal.
@@ -71,7 +72,7 @@ public:
      @returns the spectral rolloff
      */
     T spectralRolloff (const std::vector<T>& magnitudeSpectrum, T percentile = 0.85);
-    
+
     //===========================================================
     /** calculates the spectral kurtosis given the first half of the magnitude spectrum
      of an audio signal.
@@ -79,8 +80,8 @@ public:
      @returns the spectral kurtosis
      */
     T spectralKurtosis (const std::vector<T>& magnitudeSpectrum);
-    
-    
+
+
 };
 
 #endif
